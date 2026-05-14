@@ -1,4 +1,4 @@
-import Team from "./displayTeams";
+import DisplayTeam from "./displayTeams";
 function Competition({ competition }) {
   const competitors = competition?.competitors;
 
@@ -6,7 +6,7 @@ function Competition({ competition }) {
 
   return (
     <div className="game-card">
-      <Team competitor={competitors[0]} />
+      <DisplayTeam competitor={competitors[0]} />
 
       <div className="center">
         <div className="vs">VS</div>
@@ -15,7 +15,7 @@ function Competition({ competition }) {
         )}
       </div>
 
-      <Team competitor={competitors[1]} />
+      <DisplayTeam competitor={competitors[1]} />
     </div>
   );
 }
