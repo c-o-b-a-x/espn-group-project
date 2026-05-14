@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Competition from "./displayCompetitions";
 import Team from "./components/Team";
 import teamContext from "./contexts/teamContext";
-
-const link =
-  "http://site.api.espn.com/apis/site/v2/sports/soccer/usa.1/scoreboard?dates=";
+import NavBar from "./navbar";
+import { Route, Routes } from "react-router-dom";
+import SoccerDisplay from "./SoccerDisplay";
+import News from "./News";
 
 function App() {
   const [team, setTeam] = useState("");
@@ -18,6 +18,15 @@ function App() {
           <Route path="/team" element={<Team />} />
         </Routes>
       </teamContext.Provider>
+
+      <NavBar></NavBar>
+      <Routes>
+        <Route
+          path="/SoccerDisplay"
+          element={<SoccerDisplay></SoccerDisplay>}
+        ></Route>
+        <Route path="/News" element={<News></News>}></Route>
+      </Routes>
     </>
   );
 }
