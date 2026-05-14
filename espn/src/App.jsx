@@ -13,12 +13,6 @@ function App() {
 
   return (
     <>
-      <teamContext.Provider value={{ team, setTeam }}>
-        <Routes>
-          <Route path="/team" element={<Team />} />
-        </Routes>
-      </teamContext.Provider>
-
       <NavBar></NavBar>
       <Routes>
         <Route
@@ -27,6 +21,11 @@ function App() {
         ></Route>
         <Route path="/News" element={<News></News>}></Route>
       </Routes>
+      <teamContext.Provider value={{ team, setTeam }}>
+        <Routes>
+          <Route path="/team" element={<Team />} />
+        </Routes>
+      </teamContext.Provider>
     </>
   );
 }
