@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export default function NavBar() {
   const style = {
-    display: "inline-block",
     margin: "5px 10px",
   };
   return (
@@ -13,14 +12,12 @@ export default function NavBar() {
           <nav>
             <button className="dropbtn">Dropdown</button>
             <div className="dropdown-content">
-              <Link to="/SoccerDisplay" style={style}>
-                Soccer
-              </Link>
+              <Link to="/SoccerDisplay">Soccer</Link>
             </div>
           </nav>
         </div>
-        <div>
-          <Link to="/News" style={style}>
+        <div className="news">
+          <Link style={style} to="/News">
             News
           </Link>
         </div>

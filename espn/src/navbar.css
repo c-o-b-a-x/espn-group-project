@@ -12,3 +12,13 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.news {
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  margin: 5px 10px;
+  color:;
+}
