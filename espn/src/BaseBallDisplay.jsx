@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
-import Competition from "./displayCompetitions";
 import { Link } from "react-router-dom";
-import { Route, Routes } from "react-router-dom";
 import News from "./News";
-
-const link =
-  "http://site.api.espn.com/apis/site/v2/sports/soccer/usa.1/scoreboard?dates=";
-
+import Competition from "./displayCompetitions";
+import { Route, Routes } from "react-router-dom";
 const style = {
   margin: "5px 10px",
 };
 
-function SoccerDisplay() {
+const link =
+  "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard?dates=";
+
+function BaseBallDisplay() {
   const [date, setDate] = useState("20260505");
   const [data, setData] = useState();
 
@@ -29,7 +28,7 @@ function SoccerDisplay() {
   return (
     <>
       <div>
-        <h1>ESPN Soccer Scores</h1>
+        <h1>ESPN BaseBall Scores</h1>
 
         <div className="news">
           <Link style={style} to="/News">
@@ -59,4 +58,4 @@ function SoccerDisplay() {
   );
 }
 
-export default SoccerDisplay;
+export default BaseBallDisplay;
