@@ -1,31 +1,47 @@
 import { useState } from "react";
 import "./App.css";
 
-export default function News() {
-  const [news, setNews] = useState("");
-  const contextObj = {
-    news: news,
-    setNews: setNews,
-  };
-  const link =
-    "https://site.api.espn.com/apis/site/v2/sports/soccer/usa.1/news";
+function MlsNews() {
+  // Stores the team name the user types into the input
+  const [team, setTeam] = useState("");
+
+  // Stores the list of news articles returned from the API
+  const [articles, setArticles] = useState([]);
+
+  // Runs when the user clicks the Search button
+  function getNews() {
+    // Sends a request to the API using the team the user typed
+    fetch(
+      `https://site.api.espn.com/apis/site/v2/sports/soccer/usa.1/news=${team}`,
+    )
+      // Converts the API response into usable JavaScript data
+      .then((response) => response.json())
+      // Saves the API data into the articles state variable
+      .then((data) => {
+        setArticles(data);
+      });
+  }
+
   return (
-    <>
+    <div>
       <h1>ESPN Soccer News</h1>
+      {/* Input box where the user types an MLS team name */}
       <input
-        type="text"
-        placeholder="Search for news"
-        value={news}
-        onChange={(e) => {
-          setNews(e.target.value);
-        }}
+        value={team}
+        // Updates team every time the user types
+        onChange={(e) => setTeam(e.target.value)}
+        placeholder="Enter MLS team"
       />
-      <p>
-        {news === "" // This means the question is being checked
-          ? "Please enter an MLS team to see any news articles." /* Question mark means if that is true, use this */
-          : `You searched for: ${news}`}
-        {/* Means, otherwise use this instead */}
-      </p>
-    </>
+
+      {/* Button that runs getNews when clicked */}
+      <button onClick={getNews}>Search</button>
+
+      {/* Loops through the articles array and displays each title */}
+      {articles.map((article) => (
+        <p key={article.id}>{article.title}</p>
+      ))}
+    </div>
   );
 }
+
+export default MlsNews;
