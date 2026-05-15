@@ -25,9 +25,11 @@ function Roster() {
 
       {team.map((i) => (
         <div key={i.id}>
-          <img src={i.headshot?.href} />
+          <img src={i.headshot?.href} alt={i.fullName} />
+
           <h2>{i.fullName}</h2>
-          <p>{i.position.displayName}</p>
+
+          <p>{i.position?.displayName}</p>
         </div>
       ))}
     </div>
