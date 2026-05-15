@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Competition from "./displayCompetitions";
 import Team from "./components/Team";
-import teamContext from "./contexts/teamContext";
 import NavBar from "./navbar";
 import { Route, Routes } from "react-router-dom";
 import SoccerDisplay from "./SoccerDisplay";
+import BaseBallDisplay from "./BaseBallDisplay";
 import News from "./News";
 
 function App() {
@@ -14,18 +14,14 @@ function App() {
   return (
     <>
       <NavBar></NavBar>
+
       <Routes>
-        <Route
-          path="/SoccerDisplay"
-          element={<SoccerDisplay></SoccerDisplay>}
-        ></Route>
+        <Route path="/team" element={<Team />} />
+        <Route path="/SoccerDisplay" element={<SoccerDisplay />}></Route>
+        <Route path="/BaseBallDisplay" element={<BaseBallDisplay />}></Route>
         <Route path="/News" element={<News></News>}></Route>
+        <Route path="/team/:id" element={<Team />} />
       </Routes>
-      <teamContext.Provider value={{ team, setTeam }}>
-        <Routes>
-          <Route path="/team" element={<Team />} />
-        </Routes>
-      </teamContext.Provider>
     </>
   );
 }
