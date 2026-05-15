@@ -1,8 +1,7 @@
 import "./navbar.css";
 import { Link } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
-import SoccerDisplay from "./SoccerDisplay";
-import BaseBallDisplay from "./BaseBallDisplay";
+import SportDisplay from "./SportDisplay";
 
 export default function NavBar() {
   const style = {
@@ -15,8 +14,7 @@ export default function NavBar() {
           <nav>
             <button className="dropbtn">Dropdown</button>
             <div className="dropdown-content">
-              <Link to="/SoccerDisplay">Soccer</Link>
-              <Link to="/BaseBallDisplay">BaseBall</Link>
+              <Link to="/SportDisplay">Sport Scoreboards</Link>
             </div>
           </nav>
         </div>
