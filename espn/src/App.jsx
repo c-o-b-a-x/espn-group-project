@@ -17,10 +17,8 @@ function App() {
 
       <Routes>
         <Route path="/team" element={<Team />} />
-        <Route
-          path="/SoccerDisplay"
-          element={<SoccerDisplay></SoccerDisplay>}
-        ></Route>
+        <Route path="/SoccerDisplay" element={<SoccerDisplay />}></Route>
+        <Route path="/BaseBallDisplay" element={<BaseBallDisplay />}></Route>
         <Route path="/News" element={<News></News>}></Route>
         <Route path="/team/:id" element={<Team />} />
       </Routes>

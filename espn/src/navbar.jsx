@@ -4,8 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import SoccerDisplay from "./SoccerDisplay";
 import BaseBallDisplay from "./BaseBallDisplay";
 
-import TeamContext from "./contexts copy/namecontext";
-
 export default function NavBar() {
   const style = {
     margin: "5px 10px",
@@ -23,10 +21,6 @@ export default function NavBar() {
           </nav>
         </div>
       </div>
-      <Routes>
-        <Route path="/SoccerDisplay" element={<SoccerDisplay />}></Route>
-        <Route path="/BaseBallDisplay" element={<BaseBallDisplay />}></Route>
-      </Routes>
     </>
   );
 }

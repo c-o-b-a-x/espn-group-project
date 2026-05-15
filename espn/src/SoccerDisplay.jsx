@@ -5,26 +5,23 @@ import { Route, Routes } from "react-router-dom";
 import News from "./News";
 
 const link =
-  "http://site.api.espn.com/apis/site/v2/sports/soccer/usa.1/scoreboard?dates=";
+  "http://site.api.espn.com/apis/site/v2/sports/soccer/usa.1/scoreboard";
 
 const style = {
   margin: "5px 10px",
 };
 
 function SoccerDisplay() {
-  const [date, setDate] = useState("20260505");
   const [data, setData] = useState();
 
   useEffect(() => {
-    if (date === "") return;
-
-    fetch(link + date.split("-").join(""))
+    fetch(link)
       .then((response) => response.json())
       .then((data) => {
         setData(data);
         console.log(data);
       });
-  }, [date]);
+  }, []);
 
   return (
     <>
@@ -36,13 +33,6 @@ function SoccerDisplay() {
             News
           </Link>
         </div>
-
-        <input
-          type="date"
-          id="datepicker"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-        />
       </div>
 
       <div className="scoreboard">
