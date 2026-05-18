@@ -25,7 +25,7 @@ function Team() {
   if (sport === "soccer") {
     return (
       <>
-        <div>
+        <div className="center">
           <h1>{team.displayName}</h1>
           <img src={team.logos?.[0]?.href} alt={team.displayName} />
 
@@ -58,7 +58,7 @@ function Team() {
   if (sport === "football") {
     return (
       <>
-        <div>
+        <div className="center">
           <h1>{team.displayName}</h1>
           <img src={team.logos?.[0]?.href} alt={team.displayName} />
 
@@ -91,7 +91,7 @@ function Team() {
   if (sport === "baseball") {
     return (
       <>
-        <div>
+        <div className="center">
           <h1>{team.displayName}</h1>
           <img src={team.logos?.[0]?.href} alt={team.displayName} />
 
