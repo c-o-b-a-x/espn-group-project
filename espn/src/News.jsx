@@ -1,33 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 function MlsNews() {
-  // Stores the team name the user types into the input
-  const [sport, setSport] = useState("");
+  const [news, setNews] = useState([]);
 
-  // Stores the list of news articles returned from the API
-  const [articles, setArticles] = useState([]);
-
-  // Runs when the user clicks the Search button
-  function getNews() {
-    // Sends a request to the API using the team the user typed
-    fetch(
-      `https://site.api.espn.com/apis/site/v2/sports/soccer/usa.1/news=${sport}`,
-    )
-      // Converts the API response into usable JavaScript data
+  useEffect(() => {
+    fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/usa.1/news")
       .then((response) => response.json())
-      // Saves the API data into the articles state variable
       .then((data) => {
-        setArticles(data);
-      });
-  }
+        setNews(data.articles);
+        console.log(data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <div>
       <h1>ESPN Soccer News</h1>
-      {/* Loops through the articles array and displays each title */}
-      {articles.map((article) => (
-        <p key={article.title}>{article.story}</p>
+
+      {news.map((article, index) => (
+        <div key={index}>
+          <h2>{article.headline}</h2>
+          <p>{article.description}</p>
+        </div>
       ))}
     </div>
   );
