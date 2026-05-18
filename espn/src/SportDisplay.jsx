@@ -29,7 +29,7 @@ function SportDisplay() {
   }, [link]);
 
   return (
-    <div className="pageLayout">
+    <div className="navbar">
       <select
         className="navScoreboard"
         value={sport}
