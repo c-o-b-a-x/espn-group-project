@@ -4,8 +4,7 @@ import Competition from "./displayCompetitions";
 import Team from "./components/Team";
 import NavBar from "./navbar";
 import { Route, Routes } from "react-router-dom";
-import SoccerDisplay from "./SoccerDisplay";
-import BaseBallDisplay from "./BaseBallDisplay";
+import SportDisplay from "./SportDisplay";
 import News from "./News";
 
 function App() {
@@ -17,9 +16,8 @@ function App() {
 
       <Routes>
         <Route path="/team" element={<Team />} />
-        <Route path="/SoccerDisplay" element={<SoccerDisplay />}></Route>
-        <Route path="/BaseBallDisplay" element={<BaseBallDisplay />}></Route>
-        <Route path="/News" element={<News></News>}></Route>
+        <Route path="/SportDisplay" element={<SportDisplay />}></Route>
+        <Route path="/" element={<News />}></Route>
         <Route path="/team/:id" element={<Team />} />
       </Routes>
     </>
