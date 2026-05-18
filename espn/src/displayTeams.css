@@ -1,0 +1,42 @@
+p {
+  font-size: 15px;
+  padding: 0px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.teamRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+
+.teamLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.teamLogo {
+  width: 26px;
+  height: 26px;
+}
+
+.teamAbbr {
+  font-weight: 600;
+}
+
+.teamScore {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.winnerScore {
+  color: #2ecc71; /* green */
+}
