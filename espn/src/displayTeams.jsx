@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./displayTeams.css";
+import "./App.css";
 
 function DisplayTeam({ competitor, sport }) {
   const team = competitor?.team;

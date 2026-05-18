@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./SportsDisplay.css";
+import "./App.css";
 
 import Competition from "./displayCompetitions";
 import { Link, Route, Routes } from "react-router-dom";
