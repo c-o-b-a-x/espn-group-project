@@ -13,14 +13,13 @@ function SportDisplay() {
 
   useEffect(() => {
     let link = "";
+    let links = {
+      soccer: "usa.1",
+      baseball: "mlb",
+      football: "nfl",
+    };
 
-    if (sport === "soccer") {
-      link =
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/usa.1/scoreboard";
-    } else if (sport === "baseball") {
-      link =
-        "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard";
-    }
+    link = `https://site.api.espn.com/apis/site/v2/sports/${sport}/${links[sport]}/scoreboard`;
 
     if (link) {
       fetch(link)
@@ -47,13 +46,19 @@ function SportDisplay() {
         >
           Soccer
         </button>
-
         <button
           onClick={() => {
             setSport("baseball");
           }}
         >
           Baseball
+        </button>{" "}
+        <button
+          onClick={() => {
+            setSport("football");
+          }}
+        >
+          football
         </button>
       </div>
 

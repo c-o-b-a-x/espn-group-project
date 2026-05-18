@@ -25,7 +25,7 @@ function Team() {
         <h1>{team.displayName}</h1>
         <img src={team.logos?.[0]?.href} alt={team.displayName} />
         <h2>Next Event</h2>
-        <p>{team.nextEvent[0].name}</p>
+        <p>{team.nextEvent[0]?.name}</p>
         <p>{team.nextEvent[0].date}</p>
         <h2> Record</h2>
         <p> {team.record.items[0].summary}</p>
