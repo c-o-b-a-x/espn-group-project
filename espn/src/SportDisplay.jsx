@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./SportsDisplay.css";
-
 import Competition from "./displayCompetitions";
 import { Link, Route, Routes } from "react-router-dom";
 import News from "./News";
@@ -38,6 +37,7 @@ function SportDisplay() {
         <option value="">Select Sport</option>
         <option value="soccer">Soccer</option>
         <option value="baseball">Baseball</option>
+        <option value="football">Football</option>
       </select>
 
       {sport && (
