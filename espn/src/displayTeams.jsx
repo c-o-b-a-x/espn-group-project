@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Team from "./components/Team";
+import "./displayTeams.css";
+
 import { Route, Routes } from "react-router-dom";
 function DisplayTeam({ competitor }) {
   const team = competitor?.team;
@@ -10,10 +12,10 @@ function DisplayTeam({ competitor }) {
     <>
       <div className="team">
         <Link to={`/team/${team.id}`}>
-          <img src={team.logo} alt={team.displayName} />
+          <img className="teamLogo" src={team.logo} alt={team.displayName} />
         </Link>
         {console.log(team)}
-        <p>{team.displayName}</p>
+        <p>{team.abbreviation}</p>
         <p>{competitor.score}</p>
         {competitor.winner && <span className="winner">Winner</span>}
       </div>

@@ -1,4 +1,5 @@
 import DisplayTeam from "./displayTeams";
+import "./App.css";
 function Competition({ competition }) {
   const competitors = competition?.competitors;
 
