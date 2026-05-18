@@ -21,3 +21,9 @@ export function getRosterLink(sport, id) {
 
   return `https://site.api.espn.com/apis/site/v2/sports/${sport}/${links[sport]}/teams/${id}/roster`;
 }
+
+export function getLeagueLink(sport) {
+  console.log("get league link");
+  if (!sport) return "";
+  return `/espn/apis/site/v2/sports/${sport}/${links[sport]}/teams`;
+}
