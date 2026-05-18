@@ -1,19 +1,21 @@
 import { Link } from "react-router-dom";
+import "./App.css";
+
 function DisplayTeam({ competitor, sport }) {
   const team = competitor?.team;
 
   if (!team) return null;
 
   return (
-    <div className="team">
-      <Link to={`/team/${sport}/${team.id}`}>
-        <img src={team.logo} alt={team.displayName} />
+    <div className="teamRow">
+      <Link to={`/team/${sport}/${team.id}`} className="teamLeft">
+        <img src={team.logo} alt={team.displayName} className="teamLogo" />
+        <span className="teamAbbr">{team.abbreviation}</span>
       </Link>
 
-      <p>{team.displayName}</p>
-      <p>{competitor.score}</p>
-
-      {competitor.winner && <span className="winner">Winner</span>}
+      <div className={`teamScore ${competitor.winner ? "winnerScore" : ""}`}>
+        {competitor.score}
+      </div>
     </div>
   );
 }
