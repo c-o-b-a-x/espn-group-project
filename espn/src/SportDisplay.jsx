@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import "./SportsDisplay.css";
+
 import Competition from "./displayCompetitions";
 import { Link, Route, Routes } from "react-router-dom";
 import News from "./News";
@@ -28,24 +30,18 @@ function SportDisplay() {
 
   return (
     <>
-      <div>
-        <h1>ESPN {sport} Scores</h1>
-      </div>
-
-      <div className="sportSelection">
-        <button onClick={() => setSport("soccer")}>Soccer</button>
-        <button onClick={() => setSport("baseball")}>Baseball</button>
-        <button onClick={() => setSport("football")}>Football</button>
-      </div>
+      <select
+        className="navScoreboard"
+        value={sport}
+        onChange={(e) => setSport(e.target.value)}
+      >
+        <option value="">Select Sport</option>
+        <option value="soccer">Soccer</option>
+        <option value="baseball">Baseball</option>
+      </select>
 
       {sport && (
         <>
-          <div className="news">
-            <Link style={style} to="/news">
-              News
-            </Link>
-          </div>
-
           <div className="scoreboard">
             {data?.events?.map((event) =>
               event.competitions?.map((comp) => (
@@ -53,10 +49,6 @@ function SportDisplay() {
               )),
             )}
           </div>
-
-          <Routes>
-            <Route path="/news" element={<News link={link} />} />
-          </Routes>
         </>
       )}
     </>

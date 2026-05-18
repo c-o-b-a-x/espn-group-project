@@ -27,7 +27,7 @@ function MlsNews() {
       <h1>ESPN Soccer News</h1>
       {/* Loops through the articles array and displays each title */}
       {articles.map((article) => (
-        <p key={article.id}>{article.title}</p>
+        <p key={article.title}>{article.story}</p>
       ))}
     </div>
   );

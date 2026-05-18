@@ -1,6 +1,5 @@
 import "./navbar.css";
 import { Link } from "react-router-dom";
-import { Route, Routes } from "react-router-dom";
 import SportDisplay from "./SportDisplay";
 
 export default function NavBar() {
@@ -10,14 +9,7 @@ export default function NavBar() {
   return (
     <>
       <div className="navbar">
-        <div className="dropdown">
-          <nav>
-            <button className="dropbtn">Dropdown</button>
-            <div className="dropdown-content">
-              <Link to="/SportDisplay">Sport Scoreboards</Link>
-            </div>
-          </nav>
-        </div>
+        <SportDisplay></SportDisplay>
       </div>
     </>
   );

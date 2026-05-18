@@ -1,5 +1,6 @@
 import DisplayTeam from "./displayTeams";
-function Competition({ competition, sport }) {
+import "./App.css";
+function Competition({ competition }) {
   const competitors = competition?.competitors;
 
   if (!competitors) return null;
