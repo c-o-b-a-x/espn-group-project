@@ -30,7 +30,7 @@ function SportDisplay() {
   }, [link]);
 
   return (
-    <div className="navbar">
+    <div className="pageLayout">
       <select
         className="navScoreboard"
         value={sport}
