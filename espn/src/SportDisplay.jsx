@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import "./App.css";
 
 import Competition from "./displayCompetitions";
@@ -37,6 +38,7 @@ function SportDisplay() {
       >
         <option value="soccer">Soccer</option>
         <option value="baseball">Baseball</option>
+        <option value="football">Football</option>
       </select>
 
       <div className="scoreboard">
